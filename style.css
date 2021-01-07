@@ -583,7 +583,7 @@ width: 45%;
     align-items: center;
     opacity: 0;
     transition: 0.6s ease;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
 }
 
 .project-details:hover{
@@ -605,6 +605,14 @@ text-shadow: 0 0 20px aqua;
 text-decoration: none;
 font-size: 3rem;
 border-bottom: 2px solid;
+position: relative;
+}
+
+.project-details a::after{
+    content: url(/img/external-link-32.png);
+    position: absolute;
+    top: 0;
+    right: -3rem;
 }
 
 
