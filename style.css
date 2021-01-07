@@ -95,9 +95,9 @@ display: none;
     color: #fff;
     text-transform: uppercase;
     font-size: 0.80rem; 
-    transition: 0.6s ease; 
+    transition: 0.4s ease; 
     font-weight: 300;
-    letter-spacing: 1px;     
+    letter-spacing: 1px;      
 }
 
 .nav a:hover{
@@ -378,9 +378,7 @@ width: 45%;
 
 .service-section{
     margin-bottom: 11rem;
-
 }
-
 
 .service-title{
     text-align: center;
@@ -519,7 +517,7 @@ width: 45%;
 }
 
 .project-title{
-    margin-top:3rem;
+    margin-top:3rem; 
     color: aqua;
     text-shadow: 0 0 20px aqua;
 }
@@ -554,92 +552,60 @@ width: 45%;
     top: 50%;
 }
 
-.carousel{
+.project-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.projects{
     position: relative;
-    height: 600px;
-    width: 80%;
-    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.carousel-images{
-    width: 100%;
-    border-radius: 20px; 
-}
-
-.carousel-track-container{
+.proj-img{
     height: 100%;
-    position: relative;
-    margin-top: 1rem;
-    overflow: hidden;
-    /* border: 3px solid aqua; 
-    border-radius: 20px;*/
-}
-
-.track{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    transition:  transform .5s ease;
-}
-
-.carousel-slide{
-    position: absolute;
-    top: 0;
-    bottom: 0;
     width: 100%;
+    max-width: 800px;
+}
+
+.project-details{
     height: 100%;
-}
-
-.carousel-button{
+    width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.carousel-button img{
-     height: 70px;
-     width: 70px;
-}
-
-.carousel-button-left{
-    left: -90px;
-    border: none;
-    background: transparent;
-}
-
-.carousel-button-right{
-    right: -90px;
-    top: 47%;
-    border: none;
-    background: transparent;
-}
-
-.carousel-nav{
+    top:0;
+    left: 0;
     display: flex;
     justify-content: center;
-    padding: 10px 0 0 0;
+    align-items: center;
+    opacity: 0;
+    transition: 0.6s ease;
+    background-color: rgba(0,0,0,0.5);
 }
 
-.carousel-indicator{
-    border: 0;
-    border-radius: 50%;
-    width:15px;
-    height: 15px;
-    margin: 0 10px;
-   background: white;
-   cursor: pointer;
+.project-details:hover{
+    opacity: 1;
 }
 
-.carousel-indicator.current-slide{
-    background: deeppink;
-    box-shadow: 0 0 20px deeppink;
+.project-details > *{
+    transform:translateY(100px) ;
+    transition: 0.6s ease;
 }
 
-.is-hidden {
-    display: none;
+.project-details:hover > *{
+    transform:translateY(0) ;
 }
 
+.project-details a{
+color: aqua;
+text-shadow: 0 0 20px aqua;
+text-decoration: none;
+font-size: 3rem;
+border-bottom: 2px solid;
+}
 
 
 /*Form Section-------------------------------- */
@@ -655,9 +621,10 @@ width: 45%;
 .form-box{
     text-align: center;
     margin-top: 5rem;
-    width: 40rem;
-    height: 43rem;
-    padding: 20px;
+    max-width: 40rem;
+    width: 100%;
+    height: 700px;
+    padding: 2em 3em 2em 3em;
     background: #0e1522;
     border-radius: 10px;
     border: 5px solid aqua;
@@ -666,7 +633,6 @@ width: 45%;
 }
 
 .form-title{
-    margin: 1rem 0 0 0;
     font-size: 3rem;
     color: deeppink;
     text-shadow: 0 0 20px deeppink;
@@ -703,7 +669,7 @@ form p::after{
 
 input{
     margin: 1rem 0;
-    width: 30rem;
+    width: 100%;
     height: 3rem;
     border-radius: 10px;
     background: #0e1522;
@@ -720,7 +686,7 @@ input{
 }
 
 textarea{
-    width:30rem;
+    width:100%;
     height: 12rem;
     border-radius: 10px;
     background: #0e1522;
@@ -943,6 +909,12 @@ footer h4{
         }
   }
 
+    @media screen and (max-width:568px){
+        .logo{
+            padding-left: 10px;
+        }
+    }
+
 /* -------------------------hero content-------------------- */
 
 @media screen and (max-width:1381px){
@@ -1042,6 +1014,12 @@ footer h4{
 
 }
 
+@media screen and (max-width:360px){
+    .content-btn{
+        padding: 10px 70px;
+    }
+}
+
 /* -----------------------About us----------------------------- */
 @media screen and (max-width:1236px){
     .sec-content2 > * {
@@ -1088,6 +1066,15 @@ footer h4{
     }
 }
 
+@media screen and (max-width:768px){
+    .about-title {
+        margin-top: 1rem;
+    }
+
+    .btn-burger{
+        margin:18px 10px 0 0;
+    }
+}
 /* -----------------------Service-section--------------------- */
 @media screen and (max-width:1444px){
     .service-content{
@@ -1096,11 +1083,11 @@ footer h4{
    
     .card{
         width: 350px;   
-   }
+    }
 
    .card-content{
        width: 350px;
-   }
+    }
    .webdev{
     height:auto;
     width: 100%;
@@ -1112,21 +1099,20 @@ footer h4{
 @media screen and (max-width:1260px){
    .service-content{
        justify-content: space-between;
-   }
+    }
    
     .card{
         width: 300px;   
-   }
+    }
 
    .card-content{
        width: 300px;
        height: 350px;
-     
-   }
+    }
+
    .webdev{
        height:auto;
        width: 100%;
-     
     }
 }
 
@@ -1147,7 +1133,6 @@ footer h4{
    .webdev{
        height:auto;
        width: 100%;
-     
     }
 
 }
@@ -1155,20 +1140,19 @@ footer h4{
 @media screen and (max-width:870px){
    .service-content{
        justify-content: space-between;
-       flex-wrap: wrap;
-       
-   }
+       flex-wrap: wrap;   
+    }
    
     .card{
         width: 230px;   
-   }
+    }
 
    .card-content{
        width: 230px;
        height: 300px;
      
-   }
-   .webdev{
+    }
+    .webdev{
        height:auto;
        width: 100%;
     }
@@ -1188,14 +1172,13 @@ footer h4{
     .card{
         width: 500px;
         margin-top:3rem ;
-   }
+    }
 
    .card-content{
        width: 500px;
        height: 500px;
-    
-     
-   }
+    }
+
    .webdev{
        height:auto;
        width: 100%;
@@ -1211,101 +1194,49 @@ footer h4{
 }
 
 @media screen and (max-width:568px){ 
+    .service-section{
+        margin-bottom: 5rem;
+    }
+
     .card{
         width: 350px;
         margin-top:3rem ;
-   }
+    }
 
    .card-content{
        width: 350px;
        height: 400px; 
    }
 
+   .service-title{
+    margin-top: 1rem;
+   }
+ 
+}
+@media screen and (max-width:384px){ 
+ 
+    .card{
+        width: 250px;
+        margin-top:3rem ;
+    }
 
+   .card-content{
+       width: 250px;
+       height: 300px; 
+   }
+   
+   .card-title{
+    font-size: 2rem;
+}
 
 }
 
 
 /* --------------------Project section------------------------ */
-@media screen and (max-width:1509px){
-    .carousel-nav{
-        display: none;
+@media screen and (max-width:568px){
+    .project-details a{
+        font-size: 2rem;
     }
-
-    .project-section{
-        margin-bottom: 0;
-    }
-}
-
-@media screen and (max-width:870px){
-    .carousel-track-container{
-        width: 600px;
-    }
-
-    .carousel{
-
-        width: 80%;
-        margin: 0 auto;
-        height: 500px;
-    }
-
-    .carousel-button img{
-        height: 50px;
-        width: 50px;
-   }
-   
-   .carousel-button-left{
-       left: -70px;
-       border: none;
-       background: transparent;
-   }
-   
-   .carousel-button-right{
-       right: -70px;
-       top: 47%;
-       border: none;
-       background: transparent;
-   }
-
-
-}
-
-@media screen and (max-width:826px){
-    .carousel-track-container{
-        width: 100%;
-        height: 100%;
-   
-    }
-
-    .carousel{
-        width: 95%;
-    }
-
-    
-    .carousel-button img{
-      
-        width: 30px;
-   }
-   
-   .carousel-button-left{
-       left: -29px;
-       top: 25.6%;
-       border: none;
-       background: transparent;
-   }
-   
-   .carousel-button-right{
-       right: -29px;
-       top: 25%;
-       border: none;
-       background: transparent;
-   }
-
-   .project-title{
-       top: -6rem;
-   }
-
-
 }
 
 /* ------------------------Form section---------------------- */
@@ -1317,43 +1248,20 @@ footer h4{
       form p::after{
           right: 28%;
       }
-}
 
-@media screen and (max-width:650px){
-    .form-box{
-        width: 40rem;
-        height: 42rem;
-    }
-    input{
-        width: 90%;
-    }
-
-    textarea{
-        margin: .5rem 0;
-        width: 90%;
-    }
-}
-
-@media screen and (max-width:617px){
-    form p::before{
-        left: 26%;
-    }
-
-    form p::after{
-        right: 26%;
-    }  
-    
-    .form-title{
-          font-size: 7.5vw;
+      .form-title{
+          font-size: 7vw;
       }
-      .form-box{
-        width: 40rem;
-        height: 42rem;
-    }
-  
 }
 
-@media screen and (max-width:568px){
+
+
+
+@media screen and (max-width:568px){  
+    .form-title{
+        font-size: 7vw;
+    }
+
     form p::before{
         left: 22%;
     }
@@ -1363,31 +1271,26 @@ footer h4{
     }
 
     .form-box{
-        width: 30rem;
-        height: 32rem;
+        height:540px;
+        padding:2em ;
     }
 
     input{
-        width: 85%;
         height:2.5rem;
-        margin: .6rem;
+        margin: .7rem 0;
+
     }
 
     textarea{
         margin: .4rem 0;
-        width: 85%;
         height: 8rem;
     }
 
     .form-btn{
-        margin-top:.5rem ;
+        margin-top:1rem ;
     }
 
-    .input{
-        margin: .7rem 0;
-    }
-    
-    .form p{
+    #contact-p{
         margin:0;
     }
 
@@ -1395,6 +1298,12 @@ footer h4{
         margin-top: 0;
     }
     
+}
+
+@media screen and (max-width:375px){
+    .form-btn{
+        width: 11rem;
+    }
 }
 
 /* ----------------------Footer------------------------ */
