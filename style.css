@@ -569,7 +569,7 @@ width: 45%;
 .proj-img{
     height: 100%;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
 }
 
 .project-details{
@@ -655,23 +655,23 @@ form p{
 
 form p::before{
     content: "";
-    width: 70px;
+    width: 40px;
     height: 2px;
     background:aqua;
     box-shadow: 0 0 20px aqua;
     position: absolute;
-    left: 30%;
+    left: 34%;
     top: 50%;
 }
 
 form p::after{
     content: "";
-    width: 70px;
+    width: 40px;
     height: 2px;
     background:aqua;
     box-shadow: 0 0 20px aqua;
     position: absolute;
-    right: 30%;
+    right: 34%;
     top: 50%;
 }
 
@@ -757,7 +757,7 @@ footer{
 }
 
 .footer-container{
-    min-height: 300px;
+    min-height: 400px;
     width: 90%;
     margin: 0 auto;
     display: flex;
